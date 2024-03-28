@@ -7,13 +7,14 @@ function CartModal({ cartItems, removeFromCart, onClose }) {
       {cartItems.map(item => (
         <div key={item.id} className="cart-item">
           <h4>{item.name}</h4>
-          {/* Add more product details if you like */}
+          <p>Quantity: {item.quantity}</p>
           <button onClick={() => removeFromCart(item.id)}>Remove</button>
         </div>
       ))}
     </div>
   );
 }
+
   
 export default CartModal;
   

@@ -9,14 +9,14 @@
 
 .header {
   display: flex;
-  justify-content: space-between; /* This will separate the title and cart button */
+  justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem; /* Adjust as needed */
+  padding: 2rem;
 }
+
 .logo {
-  width: 100px; /* adjust as needed */
-  height: auto;
-  margin-right: 1rem;
+  max-width: 100px; 
+  height: auto; 
 }
 
 h1 {
@@ -110,19 +110,18 @@ h1 {
 }
 
 .close-modal {
-  position: absolute; /* Position the button absolutely within the modal */
-  top: 10px; /* Spacing from the top */
-  right: 10px; /* Spacing from the right */
-  background: none; /* No background for a simple look */
-  border: none; /* No border for a clean style */
-  font-size: 1.5rem; /* Increase the size of the 'X' */
-  cursor: pointer; /* Cursor to pointer to indicate it's clickable */
+  position: absolute; 
+  top: 10px; 
+  right: 10px; 
+  background: none;
+  border: none; 
+  font-size: 1.5rem; 
+  cursor: pointer; 
 }
 
-/* Optionally, add :hover and :focus styles for better UX */
 .close-modal:hover,
 .close-modal:focus {
-  color: #555; /* Change color on hover/focus */
+  color: #555; 
 }
 
 @media (max-width: 768px) {

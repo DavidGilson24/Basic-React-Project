@@ -17,13 +17,35 @@ function App() {
   const [isCartVisible, setIsCartVisible] = useState(false);
   const [activeCategory, setActiveCategory] = useState('All');
 
-  const addToCart = (product) => {
-    setCartItems(prevItems => [...prevItems, product]);
+  const addToCart = (productToAdd) => {
+    setCartItems((prevItems) => {
+      const isProductInCart = prevItems.find((item) => item.id === productToAdd.id);
+  
+      if (isProductInCart) {
+        return prevItems.map((item) => 
+          item.id === productToAdd.id ? { ...item, quantity: item.quantity + 1 } : item
+        );
+      } else {
+        return [...prevItems, { ...productToAdd, quantity: 1 }];
+      }
+    });
   };
+  
 
   const removeFromCart = (productId) => {
-    setCartItems(prevItems => prevItems.filter(item => item.id !== productId));
+    setCartItems((prevItems) => {
+      const isProductInCart = prevItems.find((item) => item.id === productId);
+  
+      if (isProductInCart && isProductInCart.quantity > 1) {
+        return prevItems.map((item) =>
+          item.id === productId ? { ...item, quantity: item.quantity - 1 } : item
+        );
+      } else {
+        return prevItems.filter((item) => item.id !== productId);
+      }
+    });
   };
+  
 
   const toggleCart = () => {
     setIsCartVisible(prevState => !prevState);
@@ -40,10 +62,10 @@ function App() {
   return (
     <>
       <header className="header">
+        <img src={logo} alt="Event Horizon Logo" className="logo" />
         <h1>Event Horizon Clothing</h1>
         <button onClick={toggleCart} className="cart-button">Cart</button>
       </header>
-
       <div className="category-filters">
         <button onClick={() => setActiveCategory('All')}>All</button>
         <button onClick={() => setActiveCategory('Bottoms')}>Bottoms</button>
