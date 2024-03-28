@@ -1,0 +1,132 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between; /* This will separate the title and cart button */
+  align-items: center;
+  padding: 1rem 2rem; /* Adjust as needed */
+}
+.logo {
+  width: 100px; /* adjust as needed */
+  height: auto;
+  margin-right: 1rem;
+}
+
+h1 {
+  margin: 0;
+  align-self: flex-start;
+}
+
+.category-filters {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  justify-content: center;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.product-card {
+  border: 1px solid #ccc;
+  background-color: #777777;
+  padding: 1rem;
+  text-align: left;
+  border-radius: 10px; 
+}
+
+.product-image {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px; 
+}
+
+.product-image img {
+  width: auto; 
+  height: 100%; 
+  object-fit: cover;
+  border-radius: 10px; 
+}
+
+.cart-modal {
+  position: fixed; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  width: 80%;
+  max-width: 400px; 
+  background: black; 
+  padding: 2rem; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  overflow-y: auto;
+  max-height: 80%;
+  border-radius: 10px; 
+}
+
+.cart-item {
+  border-bottom: 1px solid #ccc; 
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+}
+
+.cart-item h4 {
+  margin: 0; 
+  font-weight: normal; 
+}
+
+.cart-item button {
+  background-color: #333; 
+  color: white; 
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer; 
+  border-radius: 5px; 
+  transition: background-color 0.3s ease; 
+}
+
+.cart-item button:hover {
+  background-color: #555; 
+}
+
+.close-modal {
+  position: absolute; /* Position the button absolutely within the modal */
+  top: 10px; /* Spacing from the top */
+  right: 10px; /* Spacing from the right */
+  background: none; /* No background for a simple look */
+  border: none; /* No border for a clean style */
+  font-size: 1.5rem; /* Increase the size of the 'X' */
+  cursor: pointer; /* Cursor to pointer to indicate it's clickable */
+}
+
+/* Optionally, add :hover and :focus styles for better UX */
+.close-modal:hover,
+.close-modal:focus {
+  color: #555; /* Change color on hover/focus */
+}
+
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
