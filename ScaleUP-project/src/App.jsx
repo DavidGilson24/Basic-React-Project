@@ -2,14 +2,24 @@ import React, { useState } from 'react';
 import './App.css';
 import top1 from '../src/assets/img/top1.jpg';
 import bottom1 from '../src/assets/img/bottom1.jpg';
-import shoes1 from '../src/assets/img/shoes1.jpg';
+import top2 from '../src/assets/img/top2.jpg';
+import bottom2 from '../src/assets/img/bottom2.jpg';
+import top3 from '../src/assets/img/top3.jpg';
+import bottom3 from '../src/assets/img/bottom3.jpg';
+import acc1 from '../src/assets/img/acc1.jpg';
+import acc2 from '../src/assets/img/acc2.jpg';
 import logo from '../src/assets/img/logo.png';
 import CartModal from './CartModal';
 
 const products = [
   { id: 1, name: "EH - Cargo pants", category: "Bottoms", image: bottom1 },
   { id: 2, name: "EH -  Windbreaker", category: "Tops", image: top1 },
-  { id: 3, name: "EH - Leather Shoes WM", category: "Shoes", image: shoes1 },
+  { id: 3, name: "EH - Chain Bracelet", category: "Accessories", image: acc1 },
+  { id: 4, name: "EH - Flare Pants", category: "Bottoms", image: bottom2 },
+  { id: 5, name: "EH -  Mammut Jacket", category: "Tops", image: top2 },
+  { id: 6, name: "EH - Long Shorts", category: "Bottoms", image: bottom3 },
+  { id: 7, name: "EH -  Skeletal Shirt", category: "Tops", image: top3 },
+  { id: 8, name: "EH -  Star Ring", category: "Accessories", image: acc2 },
 ];
 
 function App() {
@@ -70,7 +80,7 @@ function App() {
         <button onClick={() => setActiveCategory('All')}>All</button>
         <button onClick={() => setActiveCategory('Bottoms')}>Bottoms</button>
         <button onClick={() => setActiveCategory('Tops')}>Tops</button>
-        <button onClick={() => setActiveCategory('Shoes')}>Shoes</button>
+        <button onClick={() => setActiveCategory('Accessories')}>Accessories</button>
       </div>
 
       <div className="product-grid">
